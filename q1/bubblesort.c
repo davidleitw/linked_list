@@ -6,7 +6,7 @@ struct node {
     struct node *next, *prev;
 };
 
-void insert_tail(struct node **head, int value) {
+void append_node(struct node **head, int value) {
     if(!*head) {
         struct node *new_node = malloc(sizeof(struct node));
         new_node->data = value;
@@ -88,13 +88,13 @@ void bubble_sort(struct node **head, const int length) {
 int main() {
     // int a[7] = {2, -3, 16, 5, 17, -4, 3};
     struct node *head = NULL;
-    insert_tail(&head, 2);
-    insert_tail(&head, -3);
-    insert_tail(&head, 16);
-    insert_tail(&head, 5);
-    insert_tail(&head, 17);
-    insert_tail(&head, -4);
-    insert_tail(&head, 3);
+    append_node(&head, 2);
+    append_node(&head, -3);
+    append_node(&head, 16);
+    append_node(&head, 5);
+    append_node(&head, 17);
+    append_node(&head, -4);
+    append_node(&head, 3);
 
     printf_nodes(&head);
     

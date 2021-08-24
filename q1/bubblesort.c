@@ -65,7 +65,7 @@ void bubble_sort(struct node **head, const int length) {
 
     for(int i = 0; i < length - 1; i++) {
         int flag = 0;
-        for(int j = 0; j < length - i; j++) {
+        for(int j = 0; j < length - i - 1; j++) {
             if(lnode->data > rnode->data) {
                 swap_node(&lnode, &rnode);
                 tnode = rnode;

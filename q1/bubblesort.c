@@ -35,15 +35,15 @@ int get_lists_length(struct node *head) {
     return count;
 }
 
-void swap_node(struct node **n1, struct node **n2) {
-    (*n1)->prev->next = (*n2);
-    (*n2)->prev = (*n1)->prev;
+void swap_node(struct node *n1, struct node *n2) {
+    n1->prev->next = n2;
+    n2->prev = n1->prev;
     
-    (*n1)->next = (*n2)->next;
-    (*n2)->next->prev = (*n1);
+    n1->next = n2->next;
+    n2->next->prev = n1;
     
-    (*n1)->prev = (*n2);
-    (*n2)->next = (*n1);
+    n1->prev = n2;
+    n2->next = n1;
 }
 
 void printf_nodes(struct node **head) {
@@ -67,7 +67,7 @@ void bubble_sort(struct node **head, const int length) {
         int flag = 0;
         for(int j = 0; j < length - i - 1; j++) {
             if(lnode->data > rnode->data) {
-                swap_node(&lnode, &rnode);
+                swap_node(lnode, rnode);
                 tnode = rnode;
                 rnode = lnode;
                 lnode = tnode;

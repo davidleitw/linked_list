@@ -62,7 +62,7 @@ list *sort(list *start) {
 int main() {
     list *head = malloc(sizeof(list));
     head->data = 1;
-ㄕ
+
     list *n1 = malloc(sizeof(list));
     n1->data = -3;
     head->next = n1;
